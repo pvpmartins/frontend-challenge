@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* or any width you prefer */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* thumb color */
+  border-radius: 9999px; /* fully rounded */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* thumb hover color */
+}
+
+.animated-button {
+  background: linear-gradient(
+    45deg,
+    #45a049 38% 43%,
+    #ffffffd8 49.9% 50.1%,
+    #45a049 57%
+  );
+  background-size: 200% auto;
+
+  animation: Gradient 5s ease infinite;
+}
+
+.animated-button.pulse {
+  transform: scale(1.1);
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: -50% 0%;
+  }
+  100% {
+    background-position: 150% 100%;
+  }
+}
+
+@font-face {
+  font-family: 'ArcadeGameFont';
+  src: url('../src/assets/fonts/ARCADE_R.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'ArcadeGameFont', sans-serif;
+}
