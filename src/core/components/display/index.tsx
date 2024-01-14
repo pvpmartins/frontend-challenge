@@ -65,7 +65,7 @@ export default function Display({
       <If condition={gameStatus == GameStatus.RUNNING}>
         <div className="relative flex justify-center items-center">
           <h1
-            className={`text-2xl md:text-3xl absolute font-bold ${getVariantColor(
+            className={`text-3xl md:text-3xl absolute font-bold ${getVariantColor(
               multiplierColor
             )} drop-shadow`}
             style={{
