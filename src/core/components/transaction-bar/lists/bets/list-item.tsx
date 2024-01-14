@@ -11,7 +11,6 @@ export default function ListItem({ data }: Props) {
   const isRed = data.outcome == 'lose'
   const [randomNumber, setRandomNumber] = useState(null)
 
-
   // Gere o número aleatório uma única vez quando o componente for montado
   useEffect(() => {
     const randomNum = Math.floor(Math.random() * 21)
@@ -35,22 +34,22 @@ export default function ListItem({ data }: Props) {
           {data.player.username}
         </span>
       </h1>
-      <h1 className="w-1/4 text-center items-center gap-2">
-        <span className="w-10 text-right">
+      <h1 className="w-1/4 text-center items-center gap-2 text-sm">
+        <span className="w-10 text-right text-sm">
           R$ {data.amount.toFixed(2)}
         </span>
       </h1>
       <h1 className="w-1/4 items-center text-center gap-2">
         <If condition={data.outcome == 'win'}>
-          <span
-            className="bg-green-500 text-center mx-auto rounded-full text-xs h-5 flex items-center justify-center text-gray-100 w-12">
+          <span className="bg-green-500 text-center mx-auto rounded-full text-xs h-5 flex items-center justify-center text-gray-100 w-12">
             {data.payout}x
           </span>
         </If>
       </h1>
       <div className="w-1/4 text-right">
         <If condition={data.outcome === 'win'}>
-          {data.profit !== undefined && typeof data.profit === 'number'
+          {data.profit !== undefined &&
+          typeof data.profit === 'number'
             ? `R$ ${data.profit.toFixed(2)}`
             : '0,00'}
         </If>
