@@ -50,7 +50,10 @@ export default function BetsTab() {
         </button>
       </section> */}
 
-      <section className="py-3  w-full">
+      <section
+        style={{ fontFamily: 'ArcadeGameFont, sans-serif' }}
+        className="py-3  w-full"
+      >
         <div className="flex justify-between rounded bg-opacity-25 items-center ">
           <div className="flex items-center gap-1">
             <UserIcon className="h-3.5 w-3.5" />
@@ -62,6 +65,14 @@ export default function BetsTab() {
       </section>
 
       <Header />
+      <h1
+        style={{
+          fontFamily: 'ArcadeGameFont, sans-serif',
+          fontSize: '.5rem',
+        }}
+      >
+        HI THERE
+      </h1>
       <section className="h-full flex-shrink-1 flex-grow basis-0  overflow-y-scroll scrollbar-w-0 scrollbar-track-gray-400 scrollbar-thumb-gray-600 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
         <BetList items={registeredBets} />
       </section>
