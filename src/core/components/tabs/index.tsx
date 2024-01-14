@@ -49,7 +49,7 @@ export default function Tabs({
         return (
           <a
             key={tab.key}
-            className={`tab tab-sm flex max:w-[50%]   items-center text-xs font-medium ${size} ${
+            className={`tab tab-md flex max:w-[50%]   items-center text-sm font-medium ${size} ${
               active == tab.key
                 ? `rounded bg-gray-700 bg-opacity-25 text-gray-300`
                 : ''
