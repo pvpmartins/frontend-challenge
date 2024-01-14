@@ -7,7 +7,8 @@ export default function Footer({}) {
   return (
     /* sm:w-[33%] xl:w-[25%] w-[100%] */
     <div
-      className={`fixed z-[999] bottom-0 left-0 flex bg-black h-7 border-[1px] border-gray-700 relative w-full`}
+      style={{ fontFamily: 'fantasy' }}
+      className={`fixed z-[999] bottom-0 left-0 flex bg-black h-7 border-[1px] border-gray-700 relative w-full max-md:h-[3.75rem]`}
     >
       <div className="flex items-center flex-grow">
         <p className="pl-2 text-white  text-[12px] md:text-[7px] lg:text-[9px] font-thin">
