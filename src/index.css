@@ -1,4 +1,39 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* or any width you prefer */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* thumb color */
+  border-radius: 9999px; /* fully rounded */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* thumb hover color */
+}
+
+.animated-button {
+  background-color: #4caf50; /* Initial background color */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 2s; /* Transition effect */
+}
+
+.animated-button:hover {
+  background-color: #45a049; /* Background color when hovered */
+}
