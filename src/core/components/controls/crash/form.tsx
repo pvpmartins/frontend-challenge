@@ -28,7 +28,7 @@ const getBackgroundColor = (color: string) => {
     case 'blue':
       return 'bg-blue-600 hover:bg-blue-700'
     case 'lime':
-      return 'bg-[#28a909] hover:bg-[#28a909] border-[#b2f2a3]'
+      return 'bg-[#28a909] hover:bg-[#28a909] border-[#b2f2a3] animated-button'
     case 'amber':
       return 'bg-amber-600 hover:bg-amber-700'
     case 'yellow':
@@ -76,6 +76,8 @@ export default function CrashForm({
     cashOut,
   } = useContext<any>(CrashGameContext)
 
+  const [amountChanged, setAmountChanged] = useState(false)
+
   const transaction = transactions[position]
 
   useEffect(() => {
@@ -106,6 +108,10 @@ export default function CrashForm({
 
     transaction.amount = formatOdd(newAmount)
     setTransactions({ ...transactions, [position]: transaction })
+    setAmountChanged(true)
+    setTimeout(() => {
+      setAmountChanged(false)
+    }, 100)
   }
 
   const updateExitValue = (value: string) => {
@@ -273,16 +279,18 @@ export default function CrashForm({
               }
             >
               <button
-                className={`btn border-2 hover:border-gray-300 text-[22px] hover:text-[24px] rounded-[20px] border-gray-400 ${getBackgroundColor(
+                className={`btn border-2 hover:border-gray-300 transition-all text-[22px] hover:text-[24px] rounded-[20px] border-gray-400 ${getBackgroundColor(
                   color
-                )} flex flex-col px-0 text-white h-full w-full`}
+                )} flex flex-col px-0 text-white h-full w-full ${
+                  amountChanged ? 'pulse' : ''
+                }`}
               >
-                <span className="text-sm font-normal text-white">
+                <span className="text-md font-normal text-white">
                   {transaction.mode == TransactionMode.COMMON
                     ? 'Apostar'
                     : 'Aposta Auto'}
                 </span>
-                <span className="mt-[3px] font-normal text-shadow-sm">
+                <span className="mt-[3px] font-normal text-shadow-sm ">
                   R$ {transaction.amount}
                 </span>
               </button>
