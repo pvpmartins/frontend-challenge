@@ -39,24 +39,24 @@ function HomePage() {
             />
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">
-            <div className="col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
+            <div className="relative max-md:-top-8 col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
               <TransactionBar />
             </div>
 
             <div className="col-span-12 sm:col-span-8 xl:col-span-9 relative order-1 sm:order-1 lg:order-2">
-              <div className="flex gap-3 h-full flex-col">
-                <Results />
-
-                <div className="grow relative z-0">
+              <div className="flex gap-px h-full flex-col">
+                <div className="grow relative z-0 max-md:h-[21.5rem]">
                   <iframe
                     ref={iframeRef}
-                    className="rounded-md overflow-hidden w-full h-full pointer-events-none min-h-[250px] sm:min-h-[300px]"
+                    className="h-80 rounded-md overflow-hidden w-full pointer-events-none min-h-[250px] sm:min-h-[300px]"
                     src="/motograu/index.html"
+                    style={{ height: '21.2rem' }}
                   ></iframe>
                   <div className="transform sm:translate-y-[-390px] translate-y-[-200px]">
                     <Display color={'pink'} />
                   </div>
                 </div>
+                <Results />
 
                 <Controls color="lime" position={'center'} />
               </div>
